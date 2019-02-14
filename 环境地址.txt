@@ -1,0 +1,78 @@
+官方文档：https://docs.python.org/3
+git：https://www.cnblogs.com/onelikeone/p/6857910.html
+正则表达式测试工具：http://tool.oschina.net/regex
+通过js定位元素的方法：https://www.cnblogs.com/caoj/p/7815737.html
+ https://blog.csdn.net/xiezhiming1234/article/details/81951175
+
+中文教程：http://www.runoob.com/python3/python3-tutorial.html
+
+
+
+
+Awesome Python中文版：https://github.com/jobbole/awesome-python-cn
+
+
+
+第三方库：https://pypi.python.org/pypi
+
+
+
+谷歌驱动安装：https://chromedriver.storage.googleapis.com/index.html
+
+
+火狐浏览器驱动GeckoDriver:https://github.com/mozilla/geckodriver/releases
+
+PhantomJS浏览器的安装配置
+（1.）官方网站：http://phantomjs.org
+  (2.)  官方文档：http://phantomjs.org/quick-start.html
+  (3.)  下载地址：http://phantomjs.org/download.html
+  (4.)  API接口说明：http：//phantomjs.org/api/command-line.html
+异步web服务库aiohttp的安装配置
+(1.)官方文档：http://aiohttp.readthedocs.io/en/stable
+(2.)GITHUB:   http://github.com/aio-libs/aiohttp
+(3.)PypI:        https://pypi.python.org/pypi/aiohttp
+常用的数据解析库：lxml,Beautiful Soup,pyquery(xpath,css解析器）
+一.lxml
+(1.)官方网站：http://lxml.de
+(2.)GITHUB:   https://github.com/lxml/lxml
+(3.)PypI:         https://pypi.python.org/pypi/lxml
+
+二.Beautiful Soup
+(1.)官方文档：https://www.crummy.com/software/BeautifulSoup/bs4/doc
+(2.)中文文档：https://www.crummy.com/software/BeautifulSoup/bs4/doc.zh
+(3.)PypI:         https://pypi.python.org/pypi/beautifulsoup4
+
+三.pyquery
+(1.)GITHUB:   https://github.com/gawel/pyquery
+(2.)PyPI:         https://pypi.python.org/pypi/pyquery
+(3.)官方文档：http://pyquery.readthedocs.io
+四.tesserocr(识别验证二维码)
+（1.）Github:https://github.com/sirfz/tesserocr
+  (2.)  PyPI:https://pypi.python.org/pypi/tesserocr
+  (3.)下载地址：http://digi.bib.uni-mannheim.de/tesseract
+  (4.)tesseract github:https://github.com/tesseract-ocr/tesseract
+  (5.)tessert 语言包：https://github.com/tesseract-ocr/tessdata
+  (6.)tesseract 文档：https://github.com/tesseract-ocr/tesseract/wiki/Documentation
+五.数据库工具pymysql的安装配置
+（1.）Github: https://github.com/PyMySQL/PyMySQL
+  (2.)官方文档：http://pymysql.readthedocs.io
+  (3.)PyPI  :      https://pypi.python.org/pypi/PyMySQL
+六：WEB服务的插件FLASK的安装与配置
+（1.）Github: https://github.com/pallets/flask
+  (2.)官方文档：http://flask.pocoo.org
+  (3.)中文文档：http://docs.jinkan.org/docs/flask
+  (4.)PyPI : https://pypi.python.org/pypi/Flask
+七.WEB服务的插件Tornado的安装与配置
+（1.）GitHub：https://gitbub.com/tornadoweb/tornado
+（2.）PyPI   :https://pypi.python.org/pypi/tornado
+（3.）官方文档：http://www.tornadoweb.org
+八.app抓包工具的安装
+1.Charles
+（1.）官方网站：https://www.charlesproxy.com
+（2.）下载链接：https://www.charlesproxy.com/download
+九.基本框架的按安装与配置
+（1.）官方文档：http://docs.pyspider.org
+（2.）PyPI:         https://pypi.python.org/pypi/pyspider
+（3.）GitHub:     https://github.com/binux/pyspider
+（4.）官方教程：http://docs.pyspider.org/en/latest/tutorial
+（5.）在线实例：http://demo.pyspider.org
