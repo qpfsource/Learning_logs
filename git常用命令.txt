@@ -1,0 +1,1 @@
+1.删除远程的git 分支   ：git push origin --delete  分支名称
