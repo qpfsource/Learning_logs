@@ -1,0 +1,48 @@
+一、权限管理的相关命令
+		1.修改权限：chomd [{ugoa}{+ - = }{rwx}][文件或目录]
+					       [mode=421][文件或目录]
+					例：chmod  u+x tets.list      给tet.list的文件的所有者增加可执行的操作权限
+					    chmod  g+w,o-r tets.list  给tet.list的文件的用户组增加写入的操作权限 ，同时去掉其他人的查看权限
+						chomd  g=rwx tets.list    给tet.list的文件用户组设置为读、可写、可执行的操作权限
+		2.一般使用数字表示对应的操作权限
+		        r ---4
+				w ---2
+				x ---1
+				rwxrw-r--   7    6    4
+				            u    g    o
+							
+							
+				    例：chmod 640 tets.list   -rw-r-----    -R选项表示递归修改
+					    修改目录文件夹及目录中的所有文件及文件夹的权限，使用递归修改的相关操作来完成    chmod -R 777 tets.list(修改该文件的权限为所有权限所有)
+二、创建用户
+			useradd  用户名   qipengfei
+			passwd   密码     123456
+
+
+三、文件及目录的相关权限
+			
+			
+			对文件来说： 
+				1----r （读取文件的权限  如：cat  more  less tail  head 等）
+				2----w  (写入文件的操作权限  vim 修改文件中的相关内容)
+				3----x   (执行文件的相关操作权限  比如文件是一个脚本或者是一个命令的就可以来执行)
+				
+				
+			对目录来说：
+				1----r (对一个目录有读取的权限，则可以列出目录中的所有内容)
+				2----w(对一个目录有写入的操作权限，则代表可以在该目录中创建、删除文件，创建删除目录等)
+				3----x(对一个目录有可执行的操作权限，则可以进入该目录 )
+			注：只有root用户和文件的所有者可以设置文件的相关操作权限
+			
+四、修改文件及目录的相关信息
+        1.修改所有者：chown   用户  文件或目录（修改文件的所有者只能是root管理员来操作）   例：chown root /temp/fengjie
+		2.修改所属组：chgrp   所属组的名称   文件或目录的名称
+
+
+五、添加所属组
+		1.添加所属组   groupadd lampbrother    添加一个lampbrother的所属组
+		2.修改所属组   chgrp  lampbrother   fengjie    将fengjie的所属组修改为lampbrother（chgrp lampbrother /temp/fengjie）
+		3.查看创建文件时默认权限的设置命令   umask -S  (显示创建文件的默认的权限 Linux中新创建的文件默认没有可执行的权限 )
+					 
+			
+			
