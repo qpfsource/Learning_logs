@@ -1,0 +1,28 @@
+一、压缩与解压命令
+        1.gz:
+			1.1:压缩  gzip 文件名  
+			1.2：解压缩 gzip - d 文件名  或 gunzip 文件名
+			注意；只能压缩文件，压缩时不保留源文件
+		2.tar 
+			tar 选项  -c 打包   -v显示详细信息   -f指定文件名称   -z打包同时压缩
+			tar -cvf jpan.tar   打包目录
+			gzip japan.tar     ------>japan.tar.gz
+			tar zcf japan.tar.gz 打包的目录
+			解压：
+			-x 解压
+			tar -zxvf 文件名称
+		3.zip
+		3.1 :压缩
+			zip 压缩后的文件名    压缩的文件（压缩文件）    例：zip rgf.zip rgf.txt
+			zip -r 压缩后的名称   压缩的目录（解压文件）
+		3.2解压
+			unzip 文件名称    例：unzip rgf.zip
+		4.bzip2
+		4.1 :压缩
+			bzip2 文件名称  选项  -k压缩时保留源文件   bzip2 boduo    bzip2  -k boduo(压缩时保留源文件)
+			tar -cjf japan.tar.bz2 打包的目录
+			解压 
+			bunzip2 文件名称
+			
+			tar -xjf japan.tar.gz
+			

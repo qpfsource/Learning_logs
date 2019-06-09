@@ -1,0 +1,52 @@
+一、文件查找的相关命令
+		1.语法：find  [搜索范围][匹配条件]    
+		        例：find /temp（搜索目录） -name rgf.txt（文件名称）
+			    使用通配符搜索：find /temp -name *rgf*     find /temp -name rgf？？？（？匹配单个字符，搜索时也区分的大小写）
+				不区分大小写：find 目录  -iname  文件名称（不区分文件的大小写）
+				find -size:根据文件的大小查找  find 路径   -size +201488
+				find  /home -user shengchao（根据所有者查找）
+				
+				根据时间查找   
+				-admin   访问时间   -access
+				-cmin    文件属性   change
+				-mmin    文件内容   modify
+				例：find /etc -cmin -5(在etc目录下查找5分钟之内修改过属性的文件和目录)
+				
+				条件结合查询
+				-a 两个条件同时满足
+				-o 只要满足一个文件即可
+				find -type   （f 文件  d 目录 l软连接文件）
+				find . -inum 31531 -exec或-ok rm {} \;在当前目录下查找对应的i节点的文件，找到后执行删除的操作。
+				
+二、文件查找的其他命令
+		快速查找：locate
+		1.语法：locate 文件名 -i (查找文件时不区分大小写)   update db （更新文件资料库）
+		精准查找  which
+		    which       cp                 /bin/cp （该目录下的命令所有用户都可以使用）
+			which      useradd           /usr/sbin/useradd(该文件目录下的命令只有root用户可以使用)
+			
+			whereis 查找命令的绝对路径并获得帮助文档的对应位置
+			
+			
+		在文件内容中进行搜索：
+		    grep  -i （不区分大小写） -v （排除指定的字串  ^#去掉以#开头的文件 ）mysql(查找的关键词)  /root/install.log
+				 
+				 
+				 
+三、查找命令的帮助信息
+      man  格式：man 命令    例：man ls    查看相关命令的帮助
+	     man 配置文件名称  man services
+		 man 配置文件   1命令帮助   5配置文件
+		 whatis ls   查看命令帮助
+		 apropos 查看配置文件名称
+		 查看命令的选项 touch --help
+		 help 命令   查看shell的内置命令
+		 
+		 
+		 
+四、用户管理
+	1.创建用户   useradd   yangmi
+	             passwd    yangmi   修改密码
+	2.查看登录的用户名  
+	who     登录终端     tty(本地)     pts(远程登录)
+	w       查看详细信息   
