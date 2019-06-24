@@ -1,0 +1,25 @@
+web配置信息：<Context path=" " docBase="personal" reloadable="true" crossContext="true" />
+   jdk  :https://blog.csdn.net/skylibiao/article/details/81534583
+
+
+jdk 安装：https://www.cnblogs.com/zhangshitong/p/6047725.html
+
+
+
+                  1.       service iptables stop    关闭防火墙
+                  2.       service iptables start    开启防火墙
+                  3.       ssh远程连接工具： ssh 用户名@ip地址
+
+
+Windows搭建gitblit环境：https://www.cnblogs.com/senyier/p/7272515.html
+Linux安装搭建gitblit环境：https://www.cnblogs.com/yi-u/p/10645382.html
+                                        https://blog.csdn.net/fyc__ios/article/details/52262296
+
+gitBlit 的war包部署方式：https://blog.csdn.net/u012029209/article/details/83028898
+虚拟机配置网络地址  (center os 7):https://www.linuxidc.com/Linux/2017-12/149910.htm
+
+
+备案：https://www.cnblogs.com/liuxianan/p/beian.html
+
+
+mysql 安装：https://www.cnblogs.com/duanrantao/p/8988116.html
