@@ -17,3 +17,5 @@ Linux安装搭建gitlab环境：https://www.cnblogs.com/yi-u/p/10645382.html
 
 https://blog.csdn.net/u012029209/article/details/83028898
 虚拟机配置网络地址  (center os 7):https://www.linuxidc.com/Linux/2017-12/149910.htm
+
+mysql 密码：https://www.cnblogs.com/Su-per-man/p/9076801.html
