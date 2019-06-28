@@ -23,3 +23,18 @@ gitBlit 的war包部署方式：https://blog.csdn.net/u012029209/article/details/830288
 
 
 mysql 安装：https://www.cnblogs.com/duanrantao/p/8988116.html
+Linux服务器搭建：https://blog.csdn.net/jinxiaonian11/article/details/82284826
+CenterOs的安装：https://www.osyunwei.com/archives/7829.html
+linux配置yum的阿里云地址:http://www.mamicode.com/info-detail-2249787.html
+Linux软件的安装方式：https://www.cnblogs.com/hfdp/p/9314452.html
+jenkins基础设置：https://www.cnblogs.com/yjmyzz/p/jenkins-tutorial-part-1.html
+jenkins密码：C:\Users\Administrator\.jenkins\secrets\initialAdminPassword
+jenkins项目配置：https://www.cnblogs.com/yjmyzz/p/jenkins-tutorial-part-2.html
+https://www.yiibai.com/jenkins/jenkins_git_setup.html
+jenkins文本地址：https://jenkins.io/zh/doc/
+jenkins:https://www.jianshu.com/p/5f671aca2b5a
+jenkins:https://www.cnblogs.com/jimmy-xuli/p/9020825.html
+
+jenkins:https://www.cnblogs.com/520playboy/p/6258150.html
+
+jenkins:https://www.cnblogs.com/likaileek/p/9295878.html
