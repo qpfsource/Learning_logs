@@ -1,0 +1,7 @@
+一、ACL的相关操作权限
+		df -h 查看当前系统的分区情况
+						查看分区的详细情况：dumpe2fs -h /dev/sda5
+						临时开启分区 ACL权限  ：mount -o remount,acl/重新挂载根分区，并挂载加入acl权限
+						永久打开ACL 权限：vim /etc/fstab
+						     修改 /  :UUID=cs23sdsdjksd-sdsjksjd-sdklkl/ ext4 --->defaults,acl   1 1  加入acl
+							 mount -o remount /   重新挂载王文建系统或启动，使修改的文件配置生效
