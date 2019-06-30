@@ -5,3 +5,46 @@
 						永久打开ACL 权限：vim /etc/fstab
 						     修改 /  :UUID=cs23sdsdjksd-sdsjksjd-sdklkl/ ext4 --->defaults,acl   1 1  加入acl
 							 mount -o remount /   重新挂载王文建系统或启动，使修改的文件配置生效
+
+
+二、查看与设定ACL权限
+		1、查看ACL权限: getfacl   文件名
+		2、设置ACL权限：setfacl  选项  文件名
+					选项：
+							-m                      设定ACL权限
+							-x                      删除指定的ACL权限
+							-b                      删除所有的ACL权限
+							-d                      设定默认的ACL权限
+							-k                      删除默认的ACL权限
+							-R                      递归设定ACL权限
+					
+					案例：创建指定文件夹添加用户，设置所属组并分配权限为770
+							1.mkdir  /project
+							2.创建用户                         useradd testq ....
+							3.创建用户组                       groupadd testgroup
+							4.添加用户到对应的组               gpasswd -a testq testgroup
+							5.设置文件的所有者和所属组         chown root:testgroup /project/
+							6.设置对应的操作权限               chmod 770 /project/
+					使用ACL权限的方式给某个用户分配文件夹及文件的操作权限
+							用户设置ACL权限命令：  setfacl -m u:用户名:权限  文件或目录    ---------->setfacl -m u:user3:rx /project/
+							用户组设置ACL权限命令：setfacl -m g:组名：权限   文件或目录    ----------->setfacl -m g:group1:rwx /project/
+三、最大有效权限与删除ACL权限
+				最大操作权限mask:默认情况权限为rwx,需要和用户的权限进行与操作后得到用户的操作权限
+				修改最大的有效权限：setfacl -m m:权限  文件名     setfacl -m m:rx /project
+				
+				删除ACL权限	
+							1.删除指定用户的ACL权限    
+									setfacl -x u:用户名  文件名  ------------>setfacl -x u:user3 /project
+							2.删除指定用户组的ACL权限    
+									setfacl -x g:用户组名  文件名 ------------>setfacl -x g:grouptest /project
+							3.删除整个文件的所有的ACL权限
+									setfacl -b 文件名          ------------------>setfacl  -d  /project
+									
+									
+				设定指定目录的ACL权限的递归规则(新建文件不会遵守ACL的权限)
+							setfacl -m u:user3:rwx -R 文件名
+							
+				默认的ACL权限指定
+							setfacl -m d:u:用户名:权限  文件名
+							注：默认的ACL权限如果给父目录指定，那么该目录下的所有新建文件和子文件都会遵守默认ACL权限的规则.
+							   
