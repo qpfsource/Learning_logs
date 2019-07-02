@@ -1,8 +1,8 @@
 <Context path="" docBase="personal" reloadable="true" crossContext="true" />
-https://blog.csdn.net/skylibiao/article/details/81534583
+Linux安装jdk8:https://blog.csdn.net/skylibiao/article/details/81534583
 
 
-https://www.cnblogs.com/zhangshitong/p/6047725.html
+删除Linux自带的jdk:https://www.cnblogs.com/zhangshitong/p/6047725.html
 
 
 
@@ -15,7 +15,7 @@ Windows搭建gitlab环境：https://www.cnblogs.com/senyier/p/7272515.html
 Linux安装搭建gitlab环境：https://www.cnblogs.com/yi-u/p/10645382.html
                                         https://blog.csdn.net/fyc__ios/article/details/52262296
 
-https://blog.csdn.net/u012029209/article/details/83028898
+gitblit的war包安装方式：https://blog.csdn.net/u012029209/article/details/83028898
 虚拟机配置网络地址  (center os 7):https://www.linuxidc.com/Linux/2017-12/149910.htm
 
 mysql 密码：https://www.cnblogs.com/Su-per-man/p/9076801.html

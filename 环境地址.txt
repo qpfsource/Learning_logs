@@ -5,23 +5,10 @@ git：https://www.cnblogs.com/onelikeone/p/6857910.html
  https://blog.csdn.net/xiezhiming1234/article/details/81951175
 
 中文教程：http://www.runoob.com/python3/python3-tutorial.html
-
-
-
-
 Awesome Python中文版：https://github.com/jobbole/awesome-python-cn
-
-
-
 第三方库：https://pypi.python.org/pypi
-
-
-
 谷歌驱动安装：https://chromedriver.storage.googleapis.com/index.html
-
-
 火狐浏览器驱动GeckoDriver:https://github.com/mozilla/geckodriver/releases
-
 PhantomJS浏览器的安装配置
 （1.）官方网站：http://phantomjs.org
   (2.)  官方文档：http://phantomjs.org/quick-start.html
