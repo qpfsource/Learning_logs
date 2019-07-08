@@ -1,0 +1,31 @@
+Linux安装软件的方式:https://www.cnblogs.com/hfdp/p/9314452.html
+<Context path="" docBase="platform-framework" reloadable="true" crossContext="true" />
+Linux服务器搭建：https://blog.csdn.net/jinxiaonian11/article/details/82284826
+CenterOs的安装：https://www.osyunwei.com/archives/7829.html
+linux配置yum的阿里云地址:http://www.mamicode.com/info-detail-2249787.html
+Linux软件的安装方式：https://www.cnblogs.com/hfdp/p/9314452.html
+jenkins基础设置：https://www.cnblogs.com/yjmyzz/p/jenkins-tutorial-part-1.html
+jenkins项目配置：https://www.cnblogs.com/yjmyzz/p/jenkins-tutorial-part-2.html
+apaache在6.3中安装：https://blog.csdn.net/zqtsx/article/details/9365601
+https://www.yiibai.com/jenkins/jenkins_git_setup.html
+jenkins文本地址：https://jenkins.io/zh/doc/
+jenkins:https://www.jianshu.com/p/5f671aca2b5a
+jenkins:https://www.cnblogs.com/jimmy-xuli/p/9020825.html
+jenkins:https://www.cnblogs.com/520playboy/p/6258150.html
+jenkins:https://www.cnblogs.com/likaileek/p/9295878.html
+图形化管理linux的web界面(webmin)：http://sourceforge.net/projects/webadmin/files/webmin/
+gitlab:https://www.cnblogs.com/yaun1498078591/p/9462017.html
+gitlab教程：https://blog.csdn.net/duyusean/article/details/80011540
+防火墙：https://blog.csdn.net/qq_26563299/article/details/79031685
+office 激活：https://www.52pojie.cn/thread-811553-1-1.html
+
+
+                              https://blog.csdn.net/justlpf/article/details/80681250
+                              https://www.cnblogs.com/supery007/p/9053774.html
+                              http://www.mamicode.com/info-detail-2229378.html
+   gitlab:                 https://www.jianshu.com/p/2400d9e57fd1
+                              https://www.cnblogs.com/straycats/p/7637373.html
+                              https://www.cnblogs.com/brianzhu/p/10220556.html
+                              https://www.cnblogs.com/straycats/p/7637373.html
+                              https://blog.csdn.net/b452608/article/details/82048039
+
