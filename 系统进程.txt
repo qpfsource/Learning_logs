@@ -1,0 +1,12 @@
+1.查询当前系统的所有进程：ps -ef
+2.查询指定进程：ps -ef|grep ***
+3.根据进程号查看端口号:netstat -anlp | grep ***
+4.杀掉对应的操作进程：kill -9 ****
+
+
+
+地址：https://www.cnblogs.com/AlanLee/p/5372283.html
+
+
+jmeter相关知识：1.https://www.cnblogs.com/imyalost/p/7062784.html?utm_source=itdadao&utm_medium=referral
+	           2.https://blog.csdn.net/u012111923/article/details/80705141
