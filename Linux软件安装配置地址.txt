@@ -18,6 +18,14 @@ gitlab:https://www.cnblogs.com/yaun1498078591/p/9462017.html
 gitlab教程：https://blog.csdn.net/duyusean/article/details/80011540
 防火墙：https://blog.csdn.net/qq_26563299/article/details/79031685
 office 激活：https://www.52pojie.cn/thread-811553-1-1.html
+邮件服务：https://www.cnblogs.com/lovelinux199075/p/9072265.html
+gitlab权限管理:https://blog.csdn.net/weixin_43606948/article/details/85019914
+gitlab权限管理图例：https://www.cnblogs.com/it-taosir/p/10872588.html
+ 数据存储：https://jingyan.baidu.com/article/4d58d54119ecdb9dd4e9c092.html
+Structs 2地址:https://blog.csdn.net/u010358168/article/details/79769137
+maven 构建Structs2:https://blog.csdn.net/shuai_wy/article/details/79024790
+spring boot 地址1:https://www.cnblogs.com/wmyskxz/p/9010832.html
+                    地址2:https://www.liangzl.com/get-article-detail-12094.html
 
 
                               https://blog.csdn.net/justlpf/article/details/80681250
