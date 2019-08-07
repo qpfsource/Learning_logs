@@ -1,0 +1,42 @@
+gitlab 安装操作指南：
+        1.下载安装系统必要的配置依赖项
+				在centeros7(redHat/oracle/Scientific Linux7)上,下面的命令将打开系统防火墙中的https和ssh两种访问方式。
+    
+				sudo yum install -y curl policycoreutils-python openssh-server
+				sudo systemctl enable sshd
+				sudo systemctl start sshd
+				sudo firewall-cmd --permanent --add-service=http
+				sudo systemctl reload firewalld
+				
+				
+				
+		2.安装Postfix发送通知电子邮件。如果使用其他方案发送电子邮件，请跳过此步骤，并在GitLab安装后配置一个外部SMTP服务器
+		在Postfix安装期间，可能会出现配置屏幕。选择“Internet Site”并按回车键。
+		使用服务器的外部DNS作为“邮件名称”，然后按enter。
+		如果出现其他屏幕，则继续按enter接受默认值
+
+
+				sudo yum install postfix
+				sudo systemctl enable postfix
+				sudo systemctl start postfix
+				
+				
+		3.添加gitlab安装包
+			   添加gitlab安装包：curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ee/script.rpm.sh | sudo bash
+			   
+			   清华镜像地址：https://mirrors.tuna.tsinghua.edu.cn/gitlab-ce/yum/el7/gitlab-ce-11.4.8-ce.0.el7.x86_64.rpm
+
+		
+		
+		
+		4.安装GitLab包,将https://gitlab.example.com更改为您希望访问GitLab实例的URL。安装将自动配置并在该URL处启动GitLab
+		
+		
+		
+		5.登录gitlab环境
+				第一次访问时，您将被重定向到密码重置屏幕。为初始管理员帐户提供密码，您将被重定向回登录屏幕。使用默认帐户的用户名根登录。
+				
+				
+		参考地址:https://blog.csdn.net/duyusean/article/details/80011540
+				
+		
