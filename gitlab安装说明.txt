@@ -37,6 +37,9 @@ gitlab 安装操作指南：
 				第一次访问时，您将被重定向到密码重置屏幕。为初始管理员帐户提供密码，您将被重定向回登录屏幕。使用默认帐户的用户名根登录。
 				
 				
-		参考地址:https://blog.csdn.net/duyusean/article/details/80011540
+		参考地址:     
+					1.https://blog.csdn.net/duyusean/article/details/80011540
+					2.https://www.cnblogs.com/h--d/p/10100128.html
+		
 				
 		
