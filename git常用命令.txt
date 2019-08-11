@@ -1,1 +1,2 @@
 1.删除远程的git 分支   ：git push origin --delete  分支名称
+2.使用git标签惊醒版本回退：https://blog.csdn.net/fuchaosz/article/details/51698896
