@@ -19,3 +19,5 @@ gitblit的war包安装方式：https://blog.csdn.net/u012029209/article/details/8302889
 虚拟机配置网络地址  (center os 7):https://www.linuxidc.com/Linux/2017-12/149910.htm
 
 mysql 密码：https://www.cnblogs.com/Su-per-man/p/9076801.html
+
+fiddler入门：https://blog.csdn.net/ychgyyn/article/details/82154433
