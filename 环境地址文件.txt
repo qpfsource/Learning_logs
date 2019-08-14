@@ -23,3 +23,4 @@ mysql 密码：https://www.cnblogs.com/Su-per-man/p/9076801.html
 fiddler入门：https://blog.csdn.net/ychgyyn/article/details/82154433
 
 windowbat脚本入门：https://www.jb51.net/article/99857.htm
+windows安装tomcate服务设置开机自启动:https://www.cnblogs.com/moy25/p/8296855.html
