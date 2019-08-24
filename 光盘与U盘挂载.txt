@@ -1,0 +1,31 @@
+一、光盘与U盘的挂载
+	挂载光盘
+			1.创建挂载点，例如:mkdir /mnt/cdrom/
+			2.将光驱放入到系统中
+			3.挂载光盘    例如：mount -t iso9660 /dev/cdrom  /mnt/cdrom/    或  mount  /dev/sr0  /mnt/cdrom/    -t 表示文件系统
+			使用完成之后需要卸载光盘  ：umount   + 设备文件名  或挂载点      例如：umount /dev/sr0
+			注意:挂载的实质是将设备文件名和挂载点联系起来，也就是给设备文件分配盘符
+	
+	
+	
+	U盘挂载
+			1.查看设备文件名    fdsik -l    
+			2.挂载U盘           monut -t vfat  /dev/sdb1   /mnt/usb（Linux中默认是不支持NTFS文件系统的，fat16识别为fat ,fat32识别为vfat）
+			3.使用完成后需要卸载    umount /dev/sdb1
+			 
+			 
+			 
+    支持ntfs分区的方式：
+						1.重新编译系统内核，加入对应的ntfs驱动
+						2.使用第三方分软件，如:NTFS-3G    下载链接：http://www.tuxera.com/community/ntfs-3g-download/
+						3.安装步骤：
+									3.1：解压下载的文件    tar -axvf   文件名
+									3.2：进入解压的对应目录
+									3.3：编译器准备，没有指定安装目录，则安装到指定的目录下     ./configure(可以直接进行 ./configure && make && make install)
+									3.4: 编译  make
+									3.5: 编译安装   make install
+									
+									
+	安装完成后进行挂载：
+						命令 ： mount -t ntfs-3g    /dev/sdb1   /mnt/usb   
+						卸载 ： umount  /dev/sdb1   或  /mnt/usb
