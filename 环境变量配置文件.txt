@@ -1,0 +1,29 @@
+一、环境变量的配置文件
+		强制让配置文件生效   source   配置文件名称     或 . 配置文件名称
+		
+	1.环境变量配置文件简介
+		环境变量配置文件中主要是定义对系统的操作环境生效的默认环境变量，比如PATH、HISTSIZE、PS1、HOSTNAME等默认环境变量。
+		修改：PATH＝"$PATH":/root  将/root目录下的内容加入到环境变量PATH中
+		系统默认配置文件名称
+			1./etc/profile
+			2./etc/profile.d/*.sh    这个目录下的所有.sh文件都是配置文件
+			3.~/.bash_profile
+			4.~/.bashrc
+			5./etc/bashrc
+			注意：/etc/profile代表对登录的所有用户生效。~/.bash_profile和~/.bashrc则代表只针对特定的用户生效。
+二、配置文件详解
+		优先级排序：etc/profile---------->~./bash_profile------>./bashrc------>etc/bashrc---->命令提示符
+		java环境变量配置：https://www.cnblogs.com/beanbag/p/10766984.html
+		配置示例如下：
+					#set java environment  设置java环境变量
+					JAVA_HOME=/usr/local/java/jdk1.8.0_161
+					JRE_HOME=$JAVA_HOME/jre
+					CLASS_PATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar:$JRE_HOME/lib/rt.jar
+					PATH=$PATH:$JAVA_HOME/bin:$JRE_HOME/bin
+					export JAVA_HOME JRE_HOME CLASS_PATH PATH
+			案例2：
+					export JAVA_HOME=/usr/local/java/jdk1.8.0_221
+					export JRE_HOME=/usr/local/java/jdk1.8.0_221/jre
+					export CLASSPATH=.:$JAVA_HOME/lib:$JRE_HOME/lib:$CLASSPATH
+					export PATH=$JAVA_HOME/bin:$JRE_HOME/bin:$PATH
+ 
