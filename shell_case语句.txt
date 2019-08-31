@@ -1,0 +1,40 @@
+一.多分支case条件判断语句
+		格式:
+				case $变量名 in
+				
+				"值1")
+				
+						如果变量的值等于值1,则执行程序1
+						
+						;;
+				"值2")	
+						如果变量的值等于值2,则执行程序2
+						
+						;;
+				   *)	
+						如果变量的值都不是以上的值,则执行此程序
+						
+						;;
+				esac
+		
+		
+		例如:
+				read -p "Please choose yes/no:" -t 30 cho
+					case $cho in
+							"yes")
+									echo "your choose is yes!"
+									;;
+							"no")
+									echo "your choose is no!"
+									;;
+							*)
+									echo "your choose is error!"
+									;;
+					esac
+					
+
+			
+			
+			
+
+	
