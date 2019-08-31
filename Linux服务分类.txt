@@ -1,0 +1,81 @@
+一.Linux服务与分类
+		1.Linux 服务分类  
+				1.RPM包默认安装的服务
+						1.1:独立的服务
+						1.2:基于xinetd服务
+				2.源码包安装的服务
+		
+		2.服务启动
+				1.服务启动:就是在当前系统中让服务运行,并提供对应的功能.
+				2.服务自启动:自启动就是让服务在系统开机或重启之后,随着操作系统的启动而自动启动的服务.
+		3.查询已安装的服务
+				1.RPM包安装的服务:chkconfig  --list  # 查看服务自启动状态,可以看到所有RPM包安装的服务
+				  RPM包安装的服务的启动:service httpd start   #启动时搜索/etc/rc.d/init.d/服务的启动脚本,如:/etc/rc.d/init.d/httpd服务
+				
+				2.源码包安装的服务:查看服务的安装位置,一般是/usr/local/....
+				3.查看当前系统中已经启动的服务
+					3.1: ps aux |grep 服务名
+					3.2:netstat -tlun  # 如果该服务启动占用端口
+
+
+
+二.RPM包服务的管理
+		1.独立服务的管理
+		RPM包的默认安装位置:
+			/etc/init.d:(etc/rc.d/init.d)启动脚本的位置
+			/etc/sysconfig/:初始化环境配置文件位置
+			/etc/:配置文件位置
+			/etc/xinetd.conf:xinetd配置文件
+			/etc/xinetd.d:基于xinetd服务的启动脚本
+			/var/lib/:服务产生的数据存放在这里
+			/var/log/:日志存放位置
+				1.1启动:/etc/init.d/独立服务名 start|stop|status|restart|  或者使用  service  独立服务名  start|stop|status|restart|
+						service  --status-all:查询系统中的所有RPM包安装的服务的状态
+				1.2开机自启动方式:
+							方式1:chkconfig --level 2345(chkconfig httpd off,级别数字可以省略)
+							方式2:修改etc/rc.d/rc.local(/etc/rc.local)文件,在该文件中加入服务的标准启动命令即可
+							方式3:ntsysv命令管理自启动的服务(按空格件取消*,按tab键选择保存或退出)
+		2.xinetd服务的管理(超级守护进程,一般很少见)
+				下载:
+						yum  -y  install xinetd        yum  -y  install  telnet-server
+				启动:vim /etc/xinetd.d/telnet     修改文件中disable=no,重启xinetd       service xinetd restart 
+				自启动:chkconfig telnet on   或者使用    ntsysv命令
+				
+				
+三.源码包服务的管理
+		说明:源码包安装的服务,使用绝对路径,调用启动脚本来启动.不同的源码包的启动脚本不同.可以查看源码包的安装说明,查看启动脚本的方法
+		1.启动:/usr/local/apache2/bin/apachectl  start|stop
+		2.自启动:修改 /etc/rc.d/rc.local文件,在其中加入服务的标准启动命令   /usr/local/apache2/bin/apachectl start
+		注意:设置tomcat的启动方式:https://www.cnblogs.com/skyhu365/p/10551892.html
+		
+		
+四.开机自启动Tomcat：
+
+					每次开机都要启动tomcat，网上看了好多都是用shell脚本来实现tomcat开机自启动，后来看到一种方法，直接修改系统文件来实现，已经实践过，方法有效。
+
+					1.修改脚本文件rc.local：vim /etc/rc.d/rc.local
+
+					　　这个脚本是使用者自定的开机启动程序，可以在里面添加想在系统启动之后执行的脚本或者脚本执行命令
+
+					2.添加如下内容：
+
+					　　export JAVA_HOME=/opt/jdk1.8.0_65(必须写JAVA_HOME,并且保证/etc/rc.d/rc.local有可执行的权限)
+
+					　　/opt/tomcat包名/bin/startup.sh start
+
+					3.esc 退出编辑，:wq 保存修改
+
+					4.将rc.local修改为可执行
+
+					　　chmod 777 /etc/rc.d/rc.local
+		
+		
+		
+五.管理方式转换
+		1.让源码包的apache服务可以被service 命令管理启动
+				ln -s /usr/local/apache2/bin/apachectl  /etc/init.d/apache  建立软连接
+				
+				
+				
+		
+	
