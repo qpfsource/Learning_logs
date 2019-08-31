@@ -1,0 +1,51 @@
+一.流程控制
+	1.if 语句
+		单分支if条件语句
+			if [条件判断式] ; then
+				程序
+		
+		
+		或者
+		if [条件判断式]
+		then 
+			程序
+		fi
+		注意:1.if 语句使用fi结尾 ,和一般的语言使用大括号结尾不同
+			 2.[ 条件判断式 ] 就是test命令判断,所以中括号和条件判断式之间必须有空格
+			 3.then 后面跟符合条件之后执行的程序,可以放在[]之后,用";"分割.也可以换行写入,就不需要使用";"了
+			 
+			 
+	2.双分支if条件语句
+		if  [条件判断式]
+			then
+			条件成立时,执行的程序
+			else
+			条件不成立时,执行的另一个程序
+		fi 
+		查看端口:net stat -tuln
+		查看当前计算机中已开放的可使用的端口号:nmap -sT 主机的ip地址 
+	案例:判断tomcate服务是否启动
+				#!/bin/bash
+				port=$(nmap -sT 192.168.1.170 |grep tcp |grep 9999 |awk '{print$2}')
+				# 使用nmap命令扫描服务器,并截取tomcate 服务的状态,赋予变量port
+				if [ "$port" == "open" ]
+						then
+								 echo "$(date) tomcatserver is ok!" >> /tmp/autostart-acc.log
+						else
+								/usr/local/tomcatserver/tomcat/bin/startup.sh  $>/dev/null
+								echo "$(date) restart tomcat!!!" >> /tmp/autostart-err.log
+						fi
+
+	3.多分支if 条件语句
+		if [ 条件判断式1 ]
+			then 
+				当条件判断式1成立时,执行程序1
+		elif [ 条件判断式2 ] 
+			then
+				当条件表达式2成立时,执行程序2
+		else	
+			当所有的条件都不成立时,最后执行此程序
+		fi
+		
+		程序报错后需要执行跳出操作   :  exit
+			
