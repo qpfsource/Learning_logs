@@ -4,3 +4,4 @@
 					appium自动化测试定位元素:http://www.mamicode.com/info-detail-2260877.html
 					jenkins构建配置maven项目：https://blog.csdn.net/qq_16803227/article/details/70919557
 					永久开放指定端口:https://blog.csdn.net/honey_babay/article/details/85160165
+					移动端自动化环境配置:https://www.cnblogs.com/pengzhuopeng/p/9171295.html
