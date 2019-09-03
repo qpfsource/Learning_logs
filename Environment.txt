@@ -1,7 +1,14 @@
-环境地址信息配置:
+一.环境地址信息配置:
 					云服务器搭建教程：https://blog.csdn.net/ctrlxv/article/details/79054941
 					appium自动化测试：https://www.cnblogs.com/fnng/p/4540731.html
 					appium自动化测试定位元素:http://www.mamicode.com/info-detail-2260877.html
 					jenkins构建配置maven项目：https://blog.csdn.net/qq_16803227/article/details/70919557
 					永久开放指定端口:https://blog.csdn.net/honey_babay/article/details/85160165
 					移动端自动化环境配置:https://www.cnblogs.com/pengzhuopeng/p/9171295.html
+								     https://www.cnblogs.com/fawaikuangtu123/p/10295914.html
+					Gitlab汉化地址:  https://www.cnblogs.com/straycats/p/7637373.html
+									 https://www.jianshu.com/p/d29c332bcf53
+
+					
+					
+					
