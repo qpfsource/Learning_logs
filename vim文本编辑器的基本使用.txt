@@ -66,8 +66,9 @@
 
 五、vim的快捷操作
        导入命令执行结果   :r! 命令(:r/etc/issue,导入issue文件到已经打开的文件)    :!命令（不退出vim的情况下执行对应命令）---->  :r  !date(导入当前时间到已经打开的vim文件中)
-        定义快捷键   ：map 快捷键  触发指令
+       定义快捷键   ：map 快捷键  触发指令
        连续行注释  ：n1,n2s/^/#/g
+	   自定义vim的快捷键及对应的操作：vim  .vimrc(对应用户家目录下的.vimrc文件中定义)
        替换  ：ab myemail samlampbrother@net.com
 					
 	

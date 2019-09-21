@@ -10,6 +10,8 @@
 									 https://www.jianshu.com/p/d29c332bcf53
                     Linxu修改主机名知识讲解：https://linux.cn/article-10651-1.html
 					NAT网络模式设置：https://www.cnblogs.com/lyangfighting/p/9518726.html
+					CenterOs讲解博客网址:http://blog.java1234.com
+					Java 技术地址：http://www.java1234.com
 
 
 
