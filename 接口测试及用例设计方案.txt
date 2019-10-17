@@ -45,6 +45,9 @@
 			4、接口的性能，http请求接口大多与后端执行的SQL语句性能、算法等比较相关。
 			5、接口的安全性，外部调用的接口尤为重要。
 			
+	4.环境配置方式
+		unittest + requests + HTMLTestRunner是我最熟悉的方案，几乎没什么短板。以前通过这种方案写过很多测试用例，这次把ddt加上似乎更完美了。
+			
 			
 			
 	自动化测试环境搭建:https://blog.csdn.net/songlh1234/article/details/84317617
