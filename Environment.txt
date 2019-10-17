@@ -13,6 +13,7 @@
 					CenterOs讲解博客网址:http://blog.java1234.com
 					Java 技术地址：http://www.java1234.com
 					RPM包安装mysql:https://www.cnblogs.com/wangting888/p/9701656.html
+					Fiddler拦截修改请求参数：https://wenku.baidu.com/view/ff185ff7cfc789eb172dc8f3.html
 
 
 
