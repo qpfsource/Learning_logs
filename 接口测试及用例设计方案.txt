@@ -51,3 +51,5 @@
 			
 			
 	自动化测试环境搭建:https://blog.csdn.net/songlh1234/article/details/84317617
+	
+	eolinker 接口测试平台的安装部署:https://www.cnblogs.com/yjlch1016/p/10126473.html
