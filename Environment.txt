@@ -16,6 +16,7 @@
 					Fiddler拦截修改请求参数：https://wenku.baidu.com/view/ff185ff7cfc789eb172dc8f3.html
 					
 					Idea中创建简单的web项目:https://www.cnblogs.com/ysgcs/p/9148999.html
+					Idea中将项目打成war包的方式:https://www.jianshu.com/p/6a602a6ad4cf
 
 
 
