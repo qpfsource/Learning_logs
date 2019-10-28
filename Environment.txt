@@ -17,6 +17,7 @@
 					
 					Idea中创建简单的web项目:https://www.cnblogs.com/ysgcs/p/9148999.html
 					Idea中将项目打成war包的方式:https://www.jianshu.com/p/6a602a6ad4cf
+					Jmeter 性能测试:https://blog.csdn.net/u012111923/article/details/80705141
 
 
 
