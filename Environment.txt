@@ -19,6 +19,9 @@
 					Idea中将项目打成war包的方式:https://www.jianshu.com/p/6a602a6ad4cf
 					Jmeter 性能测试:https://blog.csdn.net/u012111923/article/details/80705141
 					Idea中创建maven项目配置tomcate插件:https://blog.csdn.net/Ron0000/article/details/85344551
+					Docker 入门操作指南:https://blog.csdn.net/deng624796905/article/details/86493330
+					docker 简单讲解:https://www.cnblogs.com/billx2/articles/9766900.html
+					docker简单讲解2:https://www.cnblogs.com/lylsr/p/11173012.html
 
 
 
