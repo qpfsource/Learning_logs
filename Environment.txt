@@ -23,6 +23,10 @@
 					docker 简单讲解:https://www.cnblogs.com/billx2/articles/9766900.html
 					docker简单讲解2:https://www.cnblogs.com/lylsr/p/11173012.html
 					docker 的简单解释:https://www.cnblogs.com/jxldjsn/p/10540549.html
+					docker配置mysql 数据库:https://blog.csdn.net/yjph83/article/details/95180425
+					docker部署多台tomcate：https://blog.csdn.net/wuyabing12345/article/details/85334515
+					docker安装mysql并启动:https://segmentfault.com/a/1190000019708313
+					tomcate部署项目不动:https://blog.csdn.net/adzcsx2/article/details/75046742
 
 
 
