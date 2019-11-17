@@ -1,0 +1,189 @@
+使用Jenkines自动化搭建web项目部署的相关服务
+一、相关步骤
+	1.下载jenkines及相关安装包，下载地址:https://jenkins.io/zh/
+	2.安装启动Jenkins,使用java -jar jenkins.war的方式进行简单启动(可选择其他启动方式)
+	
+
+
+二、相关插件
+	1.Rebuilder 用于进行重新构建
+	2.Safe Restart 安全重启Jenkins
+	3.默认插件安装:https://www.cnblogs.com/zhanglianghhh/archive/2018/10/11/9770529.html
+	
+	
+三、基本配置
+	1.配置全局安全性（选择安全矩阵，设置管理员用户组及对应的权限）
+	2.添加其他用户
+	
+	
+四、检查服务器配置
+	需要知道的内容:(1.ip地址2.登录的用户名及密码3.确定是否打开ssh远程连4.确定防火墙是否关闭)
+	1.检查ssh 服务是否打开（netstat -anp |grep :22）---------->否则，使用命令:service sshd start
+	2.关闭防火墙（systemctl stop firewalld  ）,检查防火墙是否已经关闭（firewall-cmd --state）,停止开机启动（systemctl disable firewalld.service）
+五、安装相关环境文件
+	1.安装Jdk(安装对应的jdk环境，可以使用yum install java进行简单安装)
+	2.安装git (yum install git)
+	3.对git进行初始化设置，生成授权证书
+		3.1 配置用户名:git config --global user.name "qpfsource"
+		3.2 配置用户邮箱:git config --global user.email "103255@qq.com"
+		3.3 生成授权证书:ssh-keygen -t rsa -C "103255@qq.com"
+		3.4 检查生产的秘钥:cd ~/.ssh/,添加到github或对应的Git服务中
+		3.5 检查秘钥是否配置成功:ssh git@github.com,然后输入yes,检查是否提示You've successfully authenticated
+		
+	4.下载maven
+		4.1 官网下载资源:maven.apache.org,选择Binary zip archive，下载安装对应的Zip包
+		4.2 解压安装Maven
+		4.3 配置mavem的系统参数，验证maven是否安装正确
+		4.4 在系统配置文件中添加maven的安装路径（1.export MAVEN_HOME=/root/apache-maven-3.6.2  2.export PATH=.:$JAVA_HOME/bin:$MAVEN_HOME/bin:$PATH）
+		4.5 使用mvn -version进行检查maven是否安装成功
+	5. 安装tomcate配置端口
+
+六、将Linux注册到Jenkins上,发布项目的相关方式
+	1.新建节点（使用性不强）
+		系统管理---->管理节点--->新建节点(启动方式选择agent via SSH)--->输入主机地址、用户名、密码
+	
+
+	2.使用Publish over SSH 插件进行发布部署
+		2.1:安装插件Publish over SSH，填写基本信息
+		2.2:相关属性值:
+			passphrase:远程服务器登录密码
+			SSH Servers的相关属性:
+				1、ssh server name:服务主机名称，可进行自定义，起到标志作用
+				2、hostname:远程服务主机的ip地址
+				3、username:登录远程服务主机的用户名称
+				4、remote directory:发布项目时，文件能够拷贝到的对应目录
+				5、添加完后后可以进行Test Connection(测试连接)，如果成功则保存对应的内容
+		注意:系统管理中的配置对任何的项目都会生效，如果当需要某个项目配置对应的SSH Server时，可以进行单独的设置
+
+		配置方式:选择项目----->配置---->post steps--->选择send files or excute commands over ssh
+			相关参数:1、name：会默认选中全局设置中配置好的ssh服务器
+				 2、transfer set source files：war包的生成路径(/target/test.war,这里的路径是相对于jenkins的工作空间（workspace的对应目录,例如:workspace/order目录而言的）的路径信息)
+				 3、remove prefix:移除前缀，获得相关包名
+				 4. 需要将war包拷贝到的对应的目录地址，一般为tomcate的webapps目录下
+				 4、exec command:执行指定路径下的shell脚本
+		简单的shell脚本:
+			# export JAVA_HOME=/usr/local/jdk1.8.0_201/
+			# 切换到tomcate 的bin目录
+			cd /usr/local/tomcate/bin
+			# 关闭tomcate
+			sh shutdown.sh
+			# 等待10秒
+			sleep 10
+			# 重启tomcate
+			sh startup.sh
+	3.配置完git 项目的相关路径及地址后直接使用执行shell脚本的方式进行项目的打包与内容的发布工作。
+			相关shell脚本示例:
+					#!/usr/bin/env bash
+					#编译+部署order站点
+
+					#需要配置如下参数
+					# 项目路径, 在Execute Shell中配置项目路径, pwd 就可以获得该项目路径
+					# export PROJ_PATH=这个jenkins任务在部署机器上的路径
+
+					# 输入你的环境上tomcat的全路径
+					# export TOMCAT_APP_PATH=tomcat在部署机器上的路径
+
+					### base 函数
+					killTomcat()
+					{
+						pid=`ps -ef|grep tomcat|grep java|awk '{print $2}'`
+						echo "tomcat Id list :$pid"
+						if [ "$pid" = "" ]
+						then
+						  echo "no tomcat pid alive"
+						else
+						  kill -9 $pid
+						fi
+					}
+					cd $PROJ_PATH/order
+					mvn clean install
+
+					# 停止tomcat
+					killTomcat
+
+					# 删除原有工程
+					rm -rf $TOMCAT_APP_PATH/webapps/ROOT
+					rm -f $TOMCAT_APP_PATH/webapps/ROOT.war
+					rm -f $TOMCAT_APP_PATH/webapps/order.war
+
+					# 复制新的工程
+					cp $PROJ_PATH/order/target/order.war $TOMCAT_APP_PATH/webapps/
+
+					cd $TOMCAT_APP_PATH/webapps/
+					mv order.war ROOT.war
+
+					# 启动Tomcat
+					cd $TOMCAT_APP_PATH/
+					sh bin/startup.sh
+	注意:此方式可能会产生Jenkins衍生进程被杀死的问题,导致shell脚本可正常执行而对应的服务无法正常启动。
+	解决方案参考:(1.)https://blog.csdn.net/syd505/article/details/102896800   (2.)https://blog.csdn.net/qq_41154871/article/details/89714457   （）
+	即（1.）可以在shell中加入BUILD_ID=donKillMe   （2.）可以修改jenkins的配置文件，重启生效 (3.)https://www.cnblogs.com/h--d/p/11186529.html
+?	修改/etc/sysconfig/jenkins配置，在JENKINS_JAVA_OPTIONS中加入-Dhudson.util.ProcessTree.disable=true。
+	需要重启jenkins生效，此方法配置一次后，所有的job都无需设置BUILD_ID，就能够防止jenkins杀死启动的衍生进程
+
+七、发布项目过程
+	1.项目内容进行打包
+		步骤:创建maven 项目----->配置代码仓库地址及相关用户及密码--->Build中填写参数install,并配置maven的安装路径，若git 等未找到位置也需要进行配置。
+	2.填写远程的SSH Server的相关信息及对应的部署脚本文件完成项目的自动化部署过程。
+	
+	
+八、部署的相关shell脚本（适用于sendfiles or excute commands over SSH）
+	
+	1.prestep  部署开始前的操作 
+	
+		#!/bin/bash
+		# 查看tomcate进程，停止tomcate服务
+		pid=`ps -ef|grep tomcat|grep java|awk '{print $2}'`
+		echo "tomcat Id list :$pid"
+			if [ "$pid" = "" ]
+			then
+			  echo "no tomcat pid alive"
+			else
+			  kill -9 $pid
+			fi
+		# 删除原先部署的项目目录及对应的war包
+		cd /usr/local/apache-tomcat-7.0.96/webapps/
+		rm -rf ./ROOT*
+		
+		
+	2.部署过程   post steps   部署过程执行的操作
+	
+		#!/bin/bash
+		# 导入jdk的安装路径
+		export JAVA_HOME=/usr/local/jdk1.8.0_201/		# 将项目名称重命名为ROOT.war
+		cd /usr/local/apache-tomcat-7.0.96/webapps/
+		# 重命名对应的war包
+		mv ./order.war ROOT.war
+		# 重启tomcate
+		cd /usr/local/apache-tomcat-7.0.96/bin
+		sh startup.sh
+
+
+
+九、参考文件地址
+
+1.参考地址Windows在构建时不进行测试:https://www.cnblogs.com/likaileek/p/9295878.html
+
+			2.1:https://www.cnblogs.com/spll/p/9935891.html
+2.参考地址centeros:	2.2:https://www.cnblogs.com/nianyuxue/p/8472798.html
+                        2.3:https://www.cnblogs.com/gcgc/p/10823775.html
+
+
+
+	
+		
+
+			
+		
+
+
+
+
+
+
+
+
+
+
+
+	
