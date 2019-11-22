@@ -28,6 +28,7 @@
 					docker安装mysql并启动:https://segmentfault.com/a/1190000019708313
 					tomcate部署项目不动:https://blog.csdn.net/adzcsx2/article/details/75046742
 					AppScan web安全扫描项目:https://blog.csdn.net/u010013191/article/details/80733170
+					jenkins依据对应的tag标签进行构建部署:https://www.cnblogs.com/ccit/archive/2018/12/04/10064541.html
 
 
 
