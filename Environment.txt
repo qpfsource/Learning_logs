@@ -15,6 +15,7 @@
 					RPM包安装mysql:https://www.cnblogs.com/wangting888/p/9701656.html
 					Fiddler拦截修改请求参数：https://wenku.baidu.com/view/ff185ff7cfc789eb172dc8f3.html
 					RPM包安装mysql ： https://www.cnblogs.com/ting6/p/9725660.html
+					SpringBoot启动图案设计:https://www.jianshu.com/p/bd1816df148d
 					
 					Idea中创建简单的web项目:https://www.cnblogs.com/ysgcs/p/9148999.html
 					Idea中将项目打成war包的方式:https://www.jianshu.com/p/6a602a6ad4cf
@@ -30,6 +31,9 @@
 					tomcate部署项目不动:https://blog.csdn.net/adzcsx2/article/details/75046742
 					AppScan web安全扫描项目:https://blog.csdn.net/u010013191/article/details/80733170
 					jenkins依据对应的tag标签进行构建部署:https://www.cnblogs.com/ccit/archive/2018/12/04/10064541.html
+					
+					jmeter设置集合点进行并发测试:https://www.jianshu.com/p/bd1816df148d
+					
 
 
 
