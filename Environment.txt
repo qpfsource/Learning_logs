@@ -17,6 +17,8 @@
 					RPM包安装mysql ： https://www.cnblogs.com/ting6/p/9725660.html
 					SpringBoot启动图案设计:https://www.jianshu.com/p/bd1816df148d
 					windows安装设置redis:https://blog.csdn.net/czx2282885707/article/details/86100564
+					Cookie与serssion判断:https://blog.csdn.net/CBOSSY/article/details/82928674
+					Serssion的基本内容与相关使用:https://blog.csdn.net/wowwilliam0/article/details/82736074
 					
 					Idea中创建简单的web项目:https://www.cnblogs.com/ysgcs/p/9148999.html
 					Idea中将项目打成war包的方式:https://www.jianshu.com/p/6a602a6ad4cf
