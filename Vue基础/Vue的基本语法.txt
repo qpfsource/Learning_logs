@@ -26,3 +26,98 @@ html解析出来并进行渲染。
 	格式: 	<div id="app" v-cloak>
 			<h1 >{{message}}</h1>  ,然后设置对应的css样式控制页面的内容是否显示
 			</div>
+			
+7.v-bind:某些情况下，除了内容需要动态决定外，某些属性我们也希望进行动态的绑定，此时，我们可以通过使用V-bind指令完成操作。
+	1.例:动态绑定a元素的href属性、动态绑定img元素的src属性
+		<div id='app'>
+        <h1>{{message}}</h1>
+        <img v-bind:src="imgUrl" alt="看不见">
+		</div>
+		const app = new Vue({
+		el:'#app',
+		data:{
+			message:"Hello World!",
+			imgUrl:"http://www.zhlzw.com/UploadFiles/Article_UploadFiles/201210/20121006154613648.jpg"
+		}
+	})
+	使用上述的指令可以给属性进行动态的数据绑定与赋值的操作
+	简单写法即语法糖格式:<img :src="imgUrl" alt="看不见">
+	2.动态指定Class的属性
+		1.	<div id="app">
+			<h2 :class="actvie">{{message}}</h2>
+			</div>
+				el:'#app',
+		data:{
+			message:"Hello World!",
+			actvie:'actvie'
+		}
+
+		})
+		2.对象语法:<h2 v-bind:class="{类名1:boolean1,类名2:boolean2}">{{message}}</h2>,当布尔值为true时，对应的属性类就会加在对应的标签上面,
+		反之，属性类则不会加在对应的标签上面
+			例:<h2 class='自定义class' v-bind:class="{actvie:true,line:true}">{{message}}</h2>
+				<button v-on:click="btnClick">按钮</button>
+				const app = new Vue({
+				el:'#app',
+				data:{
+					message:"Hello World!",
+					actvie:'actvie',
+					isActive:true,
+					isLine:true
+				},
+				methods:{
+					btnClick:function(){
+						this.isActive = !this.isActive
+					}
+
+				}
+				通过监听点击事件来改变对应的标签的属性，修改其在页面中的展示
+				语法:<h2 class='自定义class' v-bind:class="{actvie:true,line:true}">{{message}}</h2>,和自定义的类不发生冲突，
+				如果内容过于复杂则可将其定义在函数方法中
+				如:<h2 v-bind:class="getClass()">{{message}}</h2>
+						getClass:function(){
+						return {actvie:this.isActive,line:this.isLine}
+					}
+
+				
+				
+		3.数组语法,使用数组的方式添加相关属性(使用较少)
+			语法:<h2 v-bind:class="['actvie','line']">{{message}}</h2>
+			
+		4.绑定样式
+			语法:<button :style="{key(属性名):value(属性值)}">按钮</button>
+			<h1 :style="{fontSize:'50px'(属性值要加单引号，不然会将其默认为变量)}">{{message}}</h1>
+			<h1 :style="{fontSize:finalSize}">{{message}}</h1>
+				 data:{
+				message:"Hello World!",
+				finalSize:'100px'
+					}
+			注意:比较复杂时可以将其抽取成函数进行调用
+			
+8.V-for:
+		 <li v-for="item(变量名) in movies(数组名)">{{item}}</li>      ---> <li v-for="(item,z(下标) )in movies">{{z}}---{{item}}</li>
+				el:'#app',
+				data:{
+				message:"Hello World!",
+				movies:['三国演义','水浒传','红楼梦','西游记']
+				}
+
+二、计算属性
+	一般情况下，我们在模板中可以直接通过插值语法显示一些data中的数据。但是，在某些情况下，我们可能需要对数据进行一些转化后再显示，
+	或者需要将多个数据结合起来显示
+	比如,我们需要显示完整的姓名，即LastName和FirstName结合的数据、
+	计算属性是写在实例当中的computed选项中的
+	1.原先方法的改变
+		<h1 >{{getFullName()}}</h1>
+		 methods:{
+			getFullName(){
+				return this.FirstName + ' ' + this.LastName
+			}
+			
+	2.计算属性改变(可以使用该方法进行一些复杂数据的)
+	<h1 style="color: aquamarine;">{{fullName}}</h1>
+	computed:{
+			fullName:function(){
+            return this.FirstName + ' ' + this.LastName
+			  }
+		
