@@ -1,0 +1,28 @@
+Vue的基本语法
+一、基本指令的使用
+1.Mostouch语法:使用{{}}形式的语法向页面中输出数据
+	格式:	<h1>{{message}}</h1>
+            <h2>{{firstName + ' '+LastName}}</h2>
+            <h2>{{firstName}}  {{LastName}}</h2>
+            <h2>{{counter *2 }}</h2>
+
+2.V-once:在某些情况下，我们不需要页面跟随改变，这是我们可以使用指令V-once
+	格式: 	<h2>{{message}}</h2>
+			<h2 v-once>{{message}}</h2>
+			
+3.V-html:某些情况下，我们从服务器请求到的数据本身就是HTML代码，我们可以使用指令V-html指令进行展示，该指令会跟上一个String类型，会将String的
+html解析出来并进行渲染。
+	格式: 	<h2>{{url}}</h2>
+            <h2 v-html="url"></h2>
+			
+4.V-text:作用哈Mustache比较相似，都是用于将数据显示在页面中，V-text 通常接受一个String类型
+	格式:<h2 v-text='message'></h2>,格式比较死板，一般不进行使用
+	
+5.V-pre:用于跳过这个元素和它的字元素的编译过程，用于显示原本的Mustache语法，不对内容进行解析
+	格式:<h1>{{message}}</h1>
+         <h1 v-pre>{{message}}</h1>     -->显示原始的{{message}}
+		 
+6.V-cloak:在某些情况下，我们的浏览器会直接显示出未编译的Mustache标签(解决方便用户的体验，防止客户端出现{{}}的情况)。
+	格式: 	<div id="app" v-cloak>
+			<h1 >{{message}}</h1>  ,然后设置对应的css样式控制页面的内容是否显示
+			</div>

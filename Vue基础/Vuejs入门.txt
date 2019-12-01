@@ -1,0 +1,94 @@
+Angular、React、Vuejs
+一、Vuejs 的相关安装方式
+	1.直接使用CDN方式引入
+	例:<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>   ---此处为开发环境的地址配置
+	2.下载和引入
+	开发环境地址:https://vuejs.org/js/vue.js
+	生产环境地址:https://vuejs.org/js/vue.min.js
+	3.使用NPM安装(通过webpack和CGI的使用)
+	
+二、基本入门
+	1、创建Vue实例，传入对应的参数
+	2、el:el中包含了属性，该属性决定了Vue对象挂载到哪一个元素上
+	3、data:该属性包含了存储的相关数据信息，数据内容可以自定义，也可以从服务端进行加载
+		3.1:基本数据加载
+			例:<div id="app">
+				<h2>{{message}}</h2>
+				<h3>{{name}}</h3>
+			</div>
+			<script src="../js/vue.js"></script>
+			<script>
+				// es6的相关语法  let（变量）  、const(变量)
+			const app = new Vue({
+				el:'#app',//用于挂载需要管理的元素
+				data:{//定义相关数据
+					message:'你好啊，齐鹏飞！',
+					name:'Codeing'
+					
+				}
+
+			})
+		3.2.列表数据展示
+			例:<div id="app">
+			<ul>
+				<li v-for='item in movies'>{{item}}</li>
+			</ul>
+		</div>
+		<script src="../js/vue.js"></script>
+		<script>
+		const app = new Vue({
+			el:'#app',
+			data:{
+				movies:['海贼王','星际穿越','大话西游','盗梦空间']
+			}
+		})
+		
+		3.3计数器案例
+			例:   <div id="app">
+				<h2>当前计数:{{counter}}</h2>
+				<button V-on:click="counter++">+</button>
+				<button V-on:click="counter--">-</button>
+				</div>
+				<script src="../js/vue.js"></script>
+				<script>
+				const app = new Vue({
+					el:'#app',
+					data:{
+						counter:0
+					}
+				})
+			绑定函数的方式:
+			const app = new Vue({
+			el:'#app',
+			data:{
+				counter:0
+			},
+			methods:{
+				add:function(){
+					this.counter++;
+					console.log("add被执行");
+					
+
+				},
+				sub:function(){
+					this.counter--;
+					console.log("sub被执行");
+					
+				}
+			}
+		})
+		
+四、Vue的MVVM
+		MVVM:M(Model)、V(View)、VM(ViewModel),ViewModel表示一个中间桥梁
+		Vue中的MVVM:View(DOM)、Vue(DOMLister、data)、Model(JavaScript Objects )
+		Vue对象的相关参数:https://cn.vuejs.org/v2/api/,改地址中的选项、生命周期钩子
+		基本参数:1.el:决定之后Vue实例会管理哪一个DOM(String|HTMLElement-->(document.querySelector()))
+				2.data:Vue实例对应的数据(Object|Function--->在组件中data必须是一个函数)
+				3.methods:定义一些属于Vue的方法，可以在其他地方调用，也可以在指令中调用({[key:String]:Function})
+				
+				
+五、Vue的生命周期
+	此处暂时忽略
+
+	
+    
