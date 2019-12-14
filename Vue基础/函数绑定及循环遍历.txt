@@ -1,0 +1,39 @@
+一、函数绑定(事件监听)
+	指令:V-on ,在vue中我们可以通过V-on 指令绑定对应的函数执行对应的操作，如:V-on:click,语法糖格式:@click
+	V-on参数:使用V-on绑定对应的函数时，如果该函数无参数，则方法名称后面的()可以省略，但是，如果方法中本身就有一个参数，那么
+	默认会将原生事件event参数传递进去。
+	如果需要同时传入某个参数，同时需要event时，可以通过$event传入事件
+	V-on修饰符:
+	.stop----调用event.stopPropagation()，方式事件冒泡的发生
+	.prevent---调用event.preventDefault()，阻止默认事件
+	.{keyCode|keyAlias}--只当事件是从特定的键出发时才进行回调
+	.native---监听组件根元素的默认事件
+	.once---只触发一次回调
+	
+二、条件判断(if、else)
+	相关指令:
+		v-if:和if用法类似，后面的条件为false时，对应的元素及其子元素不会被渲染，也就是不会有对应的标签出现在DOM中
+		v-else:和else用法类似
+		v-else-if：和else if用法类似
+		
+三、v-show 指令
+	作用:判断相关内容是否在页面上显示，但是，v-show控制元素是否显示时仅仅控制的是对应的display属性
+	选择方式:元素内容需要频繁的切换和隐藏时，需要使用v-show,当只有一次切换时，使用v-if即可
+	
+	
+四、v-for 遍历
+	1.遍历数组
+	作用:使用v-for指令进行数组的循环遍历
+			<div id="app">
+				<ul>
+					<li v-for="i in names">{{i}}</li>
+				</ul>
+			</div>
+	获取下标:
+			<ul>
+				<li v-for="(item,index) in names"
+				
+	2.遍历对象
+		遍历对象时，只获取一个值时，获取到的数据为value,可以使用value,key in info的方式从对象中获取数据和key值，同时，还可以在
+		对象中获取对应的index属性值（value,key,index） in info 
+	注意:官方推荐在使用v-for时，在对应的元素或组件上加上key属性，方便后期的操作与内容的复用
