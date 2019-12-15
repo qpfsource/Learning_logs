@@ -1,0 +1,118 @@
+一、组件
+	注册组件的基本步骤
+		1.创建组件构造器
+			调用Vue.extend()方法创建组件构造器
+					   const comp = Vue.extend({
+						  template:`
+						  <div>
+						  <h2>我是组件标题</h2>
+						  <p>我是组件的段落内容</p>
+						  <p>组件的基本信息介绍</p>
+						  </div>
+						  `  
+							})
+		2.注册组件
+			调用Vue.component()方法注册组件
+				Vue.component('rgf',comp),即传入组件的标签名和创建组件的构造器
+		3.使用组件
+			在Vue实例范围内可以使用注册过的相关组件
+				 <rgf></rgf>
+				 
+二、全局组件与局部组件
+	全局组件
+		可以在任意的Vue实例中进行使用
+		注册方式:Vue.component('rgf',comp)
+		
+		
+		
+		
+	局部组件
+		只能在对应的注册的Vue实例中使用
+		注册方式:在对应的Vue实例中注册
+			const app = new Vue({
+				el:"#app",
+				data:{
+					message:"Hello World!"
+				},
+				components:{
+					cpn:comp
+				}
+
+			})
+			
+			
+三、父组件与子组件
+		父组件:在组件中需要使用另一个组件的内容，则可以在组件中创建一个子组件
+				注册方式:
+				
+						const comp = Vue.extend({
+						  template:`
+						  <div>
+						  <h2>我是组件标题</h2>
+						  <p>我是组件的段落内容</p>
+						  <p>组件的基本信息介绍</p>
+						  <cpn1></cpn1>
+						  </div>
+						  `  ,
+						  components:{
+							cpn2:comp,
+						}
+					使用方式: 
+							<cpn2></cpn2>
+		
+		
+		
+		子组件:注册在父组价中的相关组件称为子组件
+		Vue实例也是一个组件，它是Vue中的所有组件的root组件，即组件中的跟组件。
+		
+四、组件的语法糖格式
+		格式:Vue.component('cpn1',{template:`
+						  <div>
+						  <h2>我是组件标题</h2>
+						  <p>我是组件的段落内容</p>
+						  <p>组件的基本信息介绍</p>
+						  <cpn1></cpn1>
+						  </div>
+						  ` })
+			在语法糖格式中可以不使用Vue.extend方法创建对应的组件构造器，也可以创建对应的局部组件
+			
+		局部组件语法糖格式:
+							const app = new Vue({
+							el:"#app",
+							data:{
+								message:"Hello World!"
+							},
+							components:{
+								cpn2:{
+									template:<div>
+									  <h2>我是组件标题</h2>
+									  <p>我是组件的段落内容</p>
+									  <p>组件的基本信息介绍</p>
+									  <cpn1></cpn1>
+									  </div>
+									` 
+								}
+							}
+						})
+						
+						
+五、组件的抽取方式(简化代码的编写)
+		1.语法格式：<script type="text/x-template" id="cpn">，使用script标签，类型必须为:text/x-template
+						<div>
+							<h2>我是组件标题</h2>
+							<p>我是组件的段落内容</p>
+							<p>组件的基本信息介绍</p>
+						</div>
+					Vue.component('cpn',{
+					template:"#cpn"  
+						});
+						
+						
+		2.语法格式：<template id="test"></template>标签
+		
+		
+六、组件中使用Vue中的相关数据
+		组件中也有对应的data及methods属性，但是，组件中的data属性必须为一个函数，且函数的返回值为对象类型，用来进行数据的存储
+					
+									
+					
