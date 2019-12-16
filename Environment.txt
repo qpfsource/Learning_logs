@@ -38,6 +38,8 @@
 					
 					jmeter设置集合点进行并发测试:https://www.jianshu.com/p/bd1816df148d
 					
+					免费ssr地址:https://free-ss.site
+					
 					
 					spring boot启动图案修改:https://www.cnblogs.com/HaveChen/p/11095295.html
 					https://www.jianshu.com/p/e73683bf47d3
