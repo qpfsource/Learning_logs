@@ -38,6 +38,9 @@
 					
 					jmeter设置集合点进行并发测试:https://www.jianshu.com/p/bd1816df148d
 					
+					境外主机配置:http://www.hydiskstation.com/?p=34
+								https://www.textarea.com/shadowsocks/ban-wagong-yijian-dajian-shadowsocks-shadowsocksr-bing-kaiqi-bbr-jiasu-964/
+					
 					免费ssr地址:https://free-ss.site
 								http://ss.pythonic.life/
 								http://www.syseen.com/skill/3752.html
