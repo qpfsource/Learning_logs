@@ -1,0 +1,33 @@
+http://www.hydiskstation.com/?p=34
+https://www.textarea.com/shadowsocks/ban-wagong-yijian-dajian-shadowsocks-shadowsocksr-bing-kaiqi-bbr-jiasu-964
+W9KsNHksjg2ck
+PATH =/root/anaconda3/bin:$PATH
+15825801472
+15850175018
+
+
+spring boot:https://blog.csdn.net/qq_30945875/article/details/83151042
+
+
+Vue中的elementui使用:https://www.cnblogs.com/yuyujuan/p/10267749.html
+			https://www.jianshu.com/p/e64004e7ca6a
+		https://jingyan.baidu.com/article/a17d5285a69c158099c8f246.html
+vue项目地址:https://github.com/bailicangdu/vue2-elm.git
+后台地址:项目运行之前，请确保系统已经安装以下应用
+    1、node (6.0 及以上版本)
+    2、mongodb (开启状态)
+    3、GraphicsMagick (裁切图片)
+    git clone https://github.com/bailicangdu/node-elm  
+
+   cd node-elm
+
+   npm install 或 yarn(推荐)
+
+   npm run dev
+
+   访问: http://localhost:8001（如果已启动前台程序，则不需打开此地址）
+   
+   
+谷歌访问:https://www.wonxun.net/share/444
+
+15299012241
