@@ -57,6 +57,8 @@
 					IDEA设置注释模板:https://www.cnblogs.com/pypua/p/11048022.html
 					
 					conda环境及包的管理:https://blog.csdn.net/zyxhangiian123456789/article/details/90451839
+					
+					xshell免费安装教育版:https://www.netsarang.com/zh/free-for-home-school/
 										
 
 
